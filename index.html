@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarah Mitchell - Professional Land Agent | Your Land Specialist</title>
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #059669;
+            --primary-dark: #047857;
+            --primary-light: #10b981;
+            --secondary-color: #f3f4f6;
+            --accent-color: #fbbf24;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --border-radius-lg: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .container-wide {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: Georgia, serif;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--white);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-full {
+            width: 100%;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .nav-subtitle {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-left: 8px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            background-color: var(--white);
+            border-top: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: 
+                linear-gradient(135deg, rgba(5,150,105,0.5), rgba(4,120,87,0.7)),
+                url('https://uploads.onecompiler.io/43s6xt6ew/43tcm67up/hero-bg.jpg') center center/cover no-repeat;
+            color: var(--white);
+            padding: 120px 0 80px;
+            margin-top: 64px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .hero-avatar {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 1rem;
+        }
+        .avatar-img {
+          width: 200px;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 4px solid var(--white);
+          box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+          background: var(--secondary-color);
+        }
+
+        .hero-avatar {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Cards */
+        .card {
+            position: relative;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .card-header {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            margin-bottom: 0.5rem;
+        }
+
+        .card-text {
+            margin-bottom: 1rem;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        
+        .card-images {
+          position: relative;
+          height: 200px;
+          overflow: hidden;
+        }
+        .listing-img {
+          position: absolute;
+          top: 0; left: 0; width: 100%; height: 100%;
+          object-fit: cover;
+          opacity: 0;
+          transition: opacity 0.5s;
+          z-index: 1;
+        }
+        .listing-img.active {
+          opacity: 1;
+          z-index: 2;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .badge {
+          position: absolute;
+          top: 1rem;
+          right: 1rem;
+          background: #ef4444;
+          color: var(--white);
+          padding: 0.25rem 0.5rem;
+          border-radius: 4px;
+          font-size: 0.75rem;
+          font-weight: bold;
+          z-index: 10;
+        }
+
+        /* Grid Layouts */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        /* Services */
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .about-avatar {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .credentials {
+            margin: 2rem 0;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .credential-check {
+            color: var(--primary-color);
+            margin-right: 0.75rem;
+            font-weight: bold;
+        }
+
+        .quote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+            font-style: italic;
+            color: var(--text-light);
+            margin: 2rem 0;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+        }
+
+        .stars {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            color: var(--text-dark);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+        }
+
+        .contact-info {
+            padding: 1rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        .contact-details h4 {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+
+        .contact-highlight {
+            background: var(--primary-dark);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-highlight h4 {
+            margin-bottom: 1rem;
+        }
+
+        .highlight-list {
+            list-style: none;
+        }
+
+        .highlight-list li {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #111827;
+            color: var(--white);
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            color: #9ca3af;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #9ca3af;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 2rem;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-light);
+        }
+
+        .modal-close:hover {
+            color: var(--text-dark);
+        }
+
+        .modal-body {
+            margin-bottom: 2rem;
+        }
+
+        .modal-footer {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .property-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: var(--border-radius);
+            padding: 1rem;
+        }
+
+        .highlight-title {
+            color: var(--primary-dark);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .feature-bullet {
+            color: var(--primary-color);
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content,
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .property-details {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-footer {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .container,
+            .container-wide {
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div>
+                <span class="nav-brand">Sarah Mitchell</span>
+                <span class="nav-subtitle">Land Specialist</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#listings" class="nav-link">Current Listings</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li><a href="#contact" class="btn btn-primary">Contact</a></li>
+            </ul>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+        </div>
+        
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#home">Home</a>
+            <a href="#listings">Current Listings</a>
+            <a href="#services">Services</a>
+            <a href="#about">About Me</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Your Trusted Land Specialist</h1>
+                    <p>I'm Sarah Mitchell, a dedicated land agent with 12+ years of experience helping clients find, evaluate, and purchase the perfect land for their dreams and investments.</p>
+                    <div class="hero-buttons">
+                        <a href="#listings" class="btn btn-secondary">View My Listings</a>
+                        <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-avatar">
+                      <img src="https://uploads.onecompiler.io/43s6xt6ew/43tcm67up/Sarah%20Mitchell.jpg" alt="Sarah Mitchell" class="avatar-img">
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Properties Sold</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Client Satisfaction</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Availability</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Listings -->
+    <section id="listings" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Current Listings</h2>
+                <p>Exclusive land opportunities I'm currently representing. Each property has been personally evaluated for quality and potential.</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <div class="card-header card-images">
+                      <img src="https://uploads.onecompiler.io/43s6xt6ew/43tcm67up/sr1.jpg" class="listing-img active" alt="Listing image 1">
+                      <img src="https://uploads.onecompiler.io/43s6xt6ew/43tcm67up/sr2.jpg" class="listing-img" alt="Listing image 2">
+                      <img src="https://uploads.onecompiler.io/43s6xt6ew/43tcm67up/sr3.jpg" class="listing-img" alt="Listing image 3">
+                      <div class="badge">NEW</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Sunset Ridge Estates</h3>
+                        <p class="card-text">42 acres zoned for residential development. Stunning sunset views, utilities at street, approved for 25 home sites.</p>
+                        <div class="card-footer">
+                            <span class="price">$850,000</span>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">42 acres</span>
+                        </div>
+                        <button class="btn btn-primary btn-full" onclick="showListingDetails('Sunset Ridge Estates')" style="margin-top: 1rem;">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header card-images">
+                      <img src="https://uploads.onecompiler.io/43s6xt6ew/43tcm67up/rs1.jpg" class="listing-img active" alt="Listing image 1">
+                      <img src="https://uploads.onecompiler.io/43s6xt6ew/43tcm67up/rs2.jpg" class="listing-img" alt="Listing image 2">
+                      <img src="https://uploads.onecompiler.io/43s6xt6ew/43tcm67up/rs3.jpg" class="listing-img" alt="Listing image 3">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Riverside Retreat</h3>
+                        <p class="card-text">18 acres with 800ft of river frontage. Perfect for private estate or recreational development. Mature hardwoods.</p>
+                        <div class="card-footer">
+                            <span class="price">$425,000</span>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">18 acres</span>
+                        </div>
+                        <button class="btn btn-primary btn-full" onclick="showListingDetails('Riverside Retreat')" style="margin-top: 1rem;">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header card-images">
+                      <img src="https://uploads.onecompiler.io/43s6xt6ew/43tcm67up/hf1.jpg" class="listing-img active" alt="Listing image 1">
+                      <img src="https://uploads.onecompiler.io/43s6xt6ew/43tcm67up/hf2.jpg" class="listing-img" alt="Listing image 2">
+                      <img src="https://uploads.onecompiler.io/43s6xt6ew/43tcm67up/hf3.jpg" class="listing-img" alt="Listing image 3">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Heritage Farm</h3>
+                        <p class="card-text">85 acres of prime farmland with irrigation, barn, and equipment shed. Excellent soil quality and crop history.</p>
+                        <div class="card-footer">
+                            <span class="price">$680,000</span>
+                            <span style="color: var(--text-light); font-size: 0.875rem;">85 acres</span>
+                        </div>
+                        <button class="btn btn-primary btn-full" onclick="showListingDetails('Heritage Farm')" style="margin-top: 1rem;">View Details</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#contact" class="btn btn-primary">See All Available Properties</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section" style="background: var(--white);">
+        <div class="container">
+            <div class="section-header">
+                <h2>How I Help You</h2>
+                <p>Comprehensive land services backed by local expertise and personalized attention to your unique needs.</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Property Search & Evaluation</h3>
+                    <p>I'll find properties that match your criteria and provide detailed analysis of each option, including market value, development potential, and any red flags.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Due Diligence Support</h3>
+                    <p>Complete property investigation including surveys, soil tests, zoning verification, utility access, and environmental assessments to protect your investment.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💰</div>
+                    <h3>Market Analysis & Pricing</h3>
+                    <p>Detailed comparable sales analysis and market trends to ensure you're making informed decisions whether buying or selling land.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🤝</div>
+                    <h3>Negotiation & Closing</h3>
+                    <p>Expert negotiation to get you the best terms, plus full support through contracts, inspections, and closing to ensure a smooth transaction.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🏗️</div>
+                    <h3>Development Consultation</h3>
+                    <p>Guidance on zoning, permits, and development potential. I work with trusted contractors, surveyors, and planners to help realize your vision.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📞</div>
+                    <h3>Ongoing Support</h3>
+                    <p>My relationship with clients doesn't end at closing. I provide ongoing advice and support for all your land-related questions and future needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://uploads.onecompiler.io/43s6xt6ew/43tcm67up/Sarah%20Mitchell.jpg" alt="Sarah Mitchell" class="avatar-img">
+                    <h3>Sarah Mitchell</h3>
+                    <p style="color: var(--primary-dark); font-weight: 600; margin-bottom: 0.5rem;">Licensed Land Specialist</p>
+                    <p style="color: var(--text-light);">Certified Land Consultant (CLC)<br>Member, REALTORS® Land Institute</p>
+                </div>
+                <div>
+                    <h2>About Your Land Agent</h2>
+                    <p>With over 12 years specializing exclusively in land transactions, I bring deep expertise in rural properties, development opportunities, and agricultural investments. My background in environmental science gives me unique insight into land quality and potential challenges.</p>
+                    
+                    <div class="credentials">
+                        <div class="credential-item">
+                            <span class="credential-check">✓</span>
+                            <span>Certified Land Consultant (CLC) designation</span>
+                        </div>
+                        <div class="credential-item">
+                            <span class="credential-check">✓</span>
+                            <span>Member of REALTORS® Land Institute</span>
+                        </div>
+                        <div class="credential-item">
+                            <span class="credential-check">✓</span>
+                            <span>Environmental Science degree</span>
+                        </div>
+                        <div class="credential-item">
+                            <span class="credential-check">✓</span>
+                            <span>Local market expert for 12+ years</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quote">
+                        "Land is more than just an investment—it's the foundation for dreams, businesses, and legacies. I'm here to help you find the perfect piece of earth for your vision."
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" style="background: var(--white);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Success Stories</h2>
+                <p>What my clients say about working with me</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Sarah found us the perfect 20-acre plot for our dream home. Her knowledge of soil conditions and water rights saved us from making a costly mistake with another property."</p>
+                    <div class="testimonial-author">- Mike & Jennifer R.</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"As a developer, I need an agent who understands zoning and development potential. Sarah's expertise helped me identify a property that others overlooked."</p>
+                    <div class="testimonial-author">- David Chen, Developer</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Sarah sold our family farm quickly and for top dollar. She understood the emotional aspect of selling land that's been in our family for generations."</p>
+                    <div class="testimonial-author">- Patricia Williams</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: var(--white);">Let's Find Your Perfect Land</h2>
+                <p style="color: rgba(255, 255, 255, 0.9);">Ready to start your land journey? I'm here to help with expert guidance and personalized service.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Get Started Today</h3>
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">First Name *</label>
+                                <input type="text" class="form-input" required placeholder="Enter your first name" title="First Name">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Last Name *</label>
+                                <input type="text" class="form-input" required title="Last Name" placeholder="Enter your last name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email *</label>
+                            <input type="email" class="form-input" required title="Email" placeholder="Enter your email address">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" class="form-input" title="Phone" placeholder="Enter your phone number">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">I'm interested in:</label>
+                            <select class="form-input" title="Interest">
+                                <option>Buying land</option>
+                                <option>Selling land</option>
+                                <option>Land evaluation</option>
+                                <option>Development consultation</option>
+                                <option>General information</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tell me about your land needs</label>
+                            <textarea class="form-input" rows="4" placeholder="Describe your ideal property, budget range, timeline, or any specific questions..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h4>Direct Line</h4>
+                            <p>(555) 123-LAND</p>
+                            <p style="font-size: 0.875rem;">Available 7 days a week</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>sarah@landspecialist.com</p>
+                            <p style="font-size: 0.875rem;">Response within 2 hours</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🏢</div>
+                        <div class="contact-details">
+                            <h4>Office</h4>
+                            <p>Premier Realty Group<br>456 Main Street, Suite 200<br>Landville, State 12345</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-highlight">
+                        <h4>Why Choose Me?</h4>
+                        <ul class="highlight-list">
+                            <li>✓ Exclusive focus on land transactions</li>
+                            <li>✓ Environmental science background</li>
+                            <li>✓ Certified Land Consultant (CLC)</li>
+                            <li>✓ 12+ years local market experience</li>
+                            <li>✓ Available evenings and weekends</li>
+                            <li>✓ No transaction too small or large</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-brand">Sarah Mitchell</div>
+                    <p class="footer-text">Professional Land Agent specializing in rural properties, development opportunities, and agricultural investments.</p>
+                    <div style="font-size: 0.875rem; color: #9ca3af;">
+                        <p>Licensed Real Estate Agent</p>
+                        <p>Certified Land Consultant (CLC)</p>
+                        <p>License #: RE123456789</p>
+                    </div>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li>Land Sales & Purchases</li>
+                        <li>Property Evaluation</li>
+                        <li>Development Consultation</li>
+                        <li>Market Analysis</li>
+                        <li>Due Diligence Support</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Quick Contact</h4>
+                    <div style="color: #9ca3af;">
+                        <p>📱 (555) 123-LAND</p>
+                        <p>✉️ sarah@landspecialist.com</p>
+                        <p>🏢 Premier Realty Group</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sarah Mitchell, Land Specialist. All rights reserved. | Equal Housing Opportunity</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="listing-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title"></h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-content">
+                <!-- Content populated by JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="scheduleShowing()">Schedule Private Showing</button>
+                <button class="btn btn-outline" onclick="requestAnalysis()">Request Market Analysis</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.remove('active');
+            });
+        });
+
+        // Listing details data
+        const listingDetails = {
+            'Sunset Ridge Estates': {
+                price: '$850,000',
+                size: '42 acres',
+                location: 'Sunset Ridge, 15 minutes from downtown',
+                zoning: 'Residential Development (R-2)',
+                features: ['Approved for 25 home sites', 'Stunning sunset views', 'Utilities at street', 'Paved road access', 'Gentle rolling topography', 'Mature oak trees'],
+                description: 'Exceptional development opportunity on 42 acres of prime residential land. The property has been pre-approved for a 25-lot subdivision with all engineering studies completed. Spectacular sunset views from elevated building sites. City water and sewer available at the street. This is a rare opportunity for developers or investors looking for a turnkey residential project.',
+                highlights: ['Pre-approved subdivision plan', 'All utilities available', 'Prime location with city access', 'Environmental studies completed']
+            },
+            'Riverside Retreat': {
+                price: '$425,000',
+                size: '18 acres',
+                location: 'Riverside County, 25 minutes from city center',
+                zoning: 'Agricultural/Residential (A-R)',
+                features: ['800 feet of river frontage', 'Mature hardwood forest', 'Private bridge access', 'Excellent fishing and wildlife', 'Flood plain maps available', 'Potential for private estate'],
+                description: 'Stunning riverfront property offering 800 feet of pristine river frontage on the scenic Clearwater River. The land is predominantly wooded with mature oak, maple, and hickory trees. Perfect for a private estate, recreational retreat, or eco-friendly development. The river provides excellent fishing for bass and trout, and the property is home to deer, turkey, and various bird species.',
+                highlights: ['Prime riverfront location', 'Recreational opportunities', 'Privacy and natural beauty', 'Development potential']
+            },
+            'Heritage Farm': {
+                price: '$680,000',
+                size: '85 acres',
+                location: 'Agricultural District, 30 minutes from metro area',
+                zoning: 'Agricultural (A-1)',
+                features: ['Established irrigation system', '40x80 equipment barn', 'Grain storage facilities', 'Class A soil rating', 'Crop history available', 'Water rights included'],
+                description: 'Prime agricultural investment featuring 85 acres of highly productive farmland. The property includes a complete irrigation system, large equipment barn, and grain storage facilities. Soil tests show excellent fertility with a Class A rating. Recent crops include corn, soybeans, and wheat with above-average yields. This is an excellent opportunity for farmers, investors, or those looking to diversify their portfolio with agricultural assets.',
+                highlights: ['Proven agricultural productivity', 'Complete farm infrastructure', 'Strong investment potential', 'Water rights included']
+            }
+        };
+
+        // Show listing details modal
+        function showListingDetails(listingName) {
+            const modal = document.getElementById('listing-modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+            
+            const listing = listingDetails[listingName];
+            
+            title.textContent = listingName;
+            content.innerHTML = `
+                <div class="property-details">
+                    <div>
+                        <div style="margin-bottom: 0.75rem;"><strong>Price:</strong> ${listing.price}</div>
+                        <div style="margin-bottom: 0.75rem;"><strong>Size:</strong> ${listing.size}</div>
+                        <div style="margin-bottom: 0.75rem;"><strong>Location:</strong> ${listing.location}</div>
+                        <div><strong>Zoning:</strong> ${listing.zoning}</div>
+                    </div>
+                    <div class="highlight-box">
+                        <div class="highlight-title">Key Highlights</div>
+                        <div style="font-size: 0.875rem;">
+                            ${listing.highlights.map(highlight => `<div style="display: flex; align-items: center; margin-bottom: 0.25rem;"><span style="color: var(--primary-color); margin-right: 0.5rem;">✓</span>${highlight}</div>`).join('')}
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="margin-bottom: 0.75rem;">Property Description</h4>
+                    <p style="color: var(--text-light); line-height: 1.6;">${listing.description}</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 0.75rem;">Features & Amenities</h4>
+                    <div class="feature-list">
+                        ${listing.features.map(feature => `<div class="feature-item"><span class="feature-bullet">•</span>${feature}</div>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.add('active');
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('listing-modal').classList.remove('active');
+        }
+
+        // Schedule showing
+        function scheduleShowing() {
+            alert('Thank you for your interest! I will contact you within 2 hours to schedule a private showing of this property.');
+            closeModal();
+        }
+
+        // Request analysis
+        function requestAnalysis() {
+            alert('I will prepare a comprehensive market analysis for this property and send it to your email within 24 hours.');
+            closeModal();
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for reaching out! I will personally review your message and respond within 2 hours. I look forward to helping you with your land needs.');
+            this.reset();
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('listing-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        function initImageCarousel(cardHeader) {
+        const images = cardHeader.querySelectorAll('.listing-img');
+        let idx = 0, timer;
+      
+        function showImage(i) {
+          images.forEach((img, j) => img.classList.toggle('active', j === i));
+        }
+      
+        function nextImage() {
+          idx = (idx + 1) % images.length;
+          showImage(idx);
+        }
+      
+        // Desktop: hover to cycle
+        cardHeader.addEventListener('mouseenter', () => {
+          timer = setInterval(nextImage, 1600);
+        });
+        cardHeader.addEventListener('mouseleave', () => {
+          clearInterval(timer);
+          idx = 0;
+          showImage(idx);
+        });
+      
+        // Mobile: auto-slide
+        if (window.matchMedia("(max-width: 768px)").matches) {
+          timer = setInterval(nextImage, 1500);
+        }
+      
+        showImage(idx);
+      }
+      
+      // Initialize for all card headers with images
+      document.querySelectorAll('.card-header.card-images').forEach(initImageCarousel);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96d569dbd3d8ba02',t:'MTc1NDg5MDk4Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
